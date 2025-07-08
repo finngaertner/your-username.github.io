@@ -1,160 +1,146 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bonvoyo Landing Page</title>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function () {
-      emailjs.init("GrK3PNM3XwVuGy6Zw");
-    })();
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bonvoyo - Dein Ticket</title>
   <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
+    :root {
+      --bonvoyo-red: #d00027;
+      --bonvoyo-dark: #2b2b2b;
+      --bonvoyo-light: #f9f9f9;
     }
 
-    .corner-logo {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: auto;
-      z-index: 999;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bonvoyo-light);
+      color: var(--bonvoyo-dark);
     }
 
     header {
-      background-color: #e2001a; /* Bonvoyo red */
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     header h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+      font-size: 1.2rem;
+      margin: 0;
+      color: var(--bonvoyo-dark);
     }
 
-    header p {
-      font-size: 1.2em;
+    header img {
+      height: 30px;
     }
 
-    main {
-      padding: 30px 20px;
-      max-width: 800px;
-      margin: auto;
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
     }
 
-    section {
-      margin-bottom: 30px;
+    .hero h2 {
+      font-size: 1.5rem;
+      color: var(--bonvoyo-red);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .image-container {
+      text-align: center;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 1.5rem auto;
     }
 
     .cta {
+      background: white;
+      padding: 2rem 1rem;
       text-align: center;
-      margin-top: 40px;
     }
 
-    .cta input {
-      padding: 12px;
-      font-size: 1em;
-      width: 80%;
-      max-width: 400px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    .cta h3 {
+      color: var(--bonvoyo-dark);
+      margin-bottom: 1rem;
     }
 
     .cta button {
-      background-color: #e2001a;
+      background: var(--bonvoyo-red);
       color: white;
-      padding: 12px 24px;
-      font-size: 1em;
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
 
     .cta button:hover {
-      background-color: #c10015;
+      background: #b10020;
     }
 
     footer {
-      font-size: 0.8em;
+      font-size: 0.8rem;
       color: #666;
       text-align: center;
-      padding: 20px;
-      background-color: #f5f5f5;
+      padding: 2rem 1rem;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
+      .hero h2 {
+        font-size: 1.3rem;
       }
-      header p, main {
-        font-size: 1em;
+      .hero p {
+        font-size: 0.95rem;
       }
     }
   </style>
 </head>
 <body>
-  <img src="1D30EE90-673D-4793-BDCC-940EE762F1ED.png" alt="Bonvoyo Slogan Icon" class="corner-logo">
-
   <header>
-    <h1>Dieses Ticket könnte kostenlos sein!</h1>
-    <p>Wenn deine Firma Bonvoyo anbieten würde.</p>
+    <h1>Wenn deine Firma Bonvoyo anbieten würde …</h1>
+    <img src="file-HsSEpWAP98RCBVtrACqkjY" alt="Bonvoyo Logo" />
   </header>
 
-  <main>
-    <section>
-      <h2>Was ist Bonvoyo?</h2>
-      <p>Bonvoyo ist ein innovativer Mobilitätsbenefit für Unternehmen. Mitarbeitende erhalten ein flexibles, steuerfreies Mobilitätsbudget – nutzbar für Bahn, Bus, Sharing & Co. Das spart Kosten und steigert die Zufriedenheit.</p>
-    </section>
+  <section class="hero">
+    <h2>Dein Ticket könnte kostenlos sein.</h2>
+    <p>
+      Bonvoyo ist das Mobilitätsbudget für zufriedene Mitarbeitende: Arbeitgeber:innen können ein monatliches Budget zur Verfügung stellen, das für Bahn, Fahrrad, Scooter und mehr verwendet wird. Das Ganze ist steuerlich begünstigt und macht nachhaltige Mobilität einfacher als je zuvor.
+    </p>
+    <p>
+      Für Unternehmen bedeutet das: attraktive Benefits, steuerliche Vorteile, und ein echter Beitrag zur Nachhaltigkeit.
+    </p>
+  </section>
 
-    <section>
-      <h2>Warum profitieren alle?</h2>
-      <ul>
-        <li><strong>Für Mitarbeitende:</strong> Flexible Mobilität, echte Ersparnisse, einfache Nutzung per App.</li>
-        <li><strong>Für Unternehmen:</strong> Stärkung der Arbeitgebermarke, attraktive Benefits, nachhaltige Mobilität.</li>
-      </ul>
-    </section>
+  <div class="image-container">
+    <img src="image2.png" alt="Frau auf Call-a-Bike mit DB-Zug im Hintergrund" />
+  </div>
 
-    <section class="cta">
-      <h2>Jetzt E-Mail erhalten und weiterleiten</h2>
-      <p>Trag hier deine E-Mail-Adresse ein. Du bekommst eine Nachricht, die du direkt an deinen Chef oder HR weiterleiten kannst.</p>
-      <form id="emailForm">
-        <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
-        <br>
-        <button type="submit">E-Mail anfordern</button>
-        <p id="status"></p>
-      </form>
-    </section>
-  </main>
+  <section class="cta">
+    <h3>Teile Bonvoyo mit deiner Firma!</h3>
+    <p>Leite die erhaltene E-Mail an deine Personalabteilung oder Chef:in weiter – und mach den Unterschied.</p>
+    <button onclick="window.location.href='mailto:?subject=Bonvoyo Mobilitätsbudget&body=Ich habe gerade Bonvoyo entdeckt – ein steuerlich gefördertes Mobilitätsbudget, von dem wir beide profitieren könnten! Schau mal hier: https://www.bonvoyo.de/'">
+      E-Mail weiterleiten
+    </button>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Bonvoyo GmbH | Musterstraße 1, 80331 München | info@bonvoyo.de</p>
+    <p>© 2025 Bonvoyo – Ein Angebot der Deutsche Bahn Connect GmbH</p>
+    <p><a href="https://www.bonvoyo.de/impressum" target="_blank">Impressum</a> | <a href="https://www.bonvoyo.de/datenschutz" target="_blank">Datenschutz</a></p>
   </footer>
-
-  <script>
-    document.getElementById('emailForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const userEmail = document.getElementById('user_email').value;
-
-      // Send to Bonvoyo Team
-      emailjs.send("service_aeekxis", "template_jv6b797", { email: userEmail });
-
-      // Send to User
-      emailjs.send("service_aeekxis", "template_pdspmsw", { email: userEmail })
-        .then(function () {
-          document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
-          document.getElementById('emailForm').reset();
-        }, function (error) {
-          document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
-        });
-    });
-  </script>
 </body>
 </html>
