@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonvoyo - Get Your Ticket</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("GrK3PNM3XwVuGy6Zw"); // Your Public Key
+    })();
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    #status {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Dein Ticket per E-Mail</h2>
+    <form id="emailForm">
+      <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
+      <button type="submit">Ticket senden</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const userEmail = document.getElementById('user_email').value;
+
+      emailjs.send("service_pmc2ves", "template_jvv3l5o", {
+        email: userEmail, // Must match {{email}} in your EmailJS template
+        name: "Bonvoyo Bot", // Optional, matches {{name}} if used
+        message: "Danke für dein Interesse an Bonvoyo!" // Optional, matches {{message}} if used
+      })
+      .then(function(response) {
+        document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
+      }, function(error) {
+        document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
+      });
+    });
+  </script>
+</body>
+</html>
