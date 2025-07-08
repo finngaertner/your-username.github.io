@@ -26,7 +26,7 @@
     }
 
     header {
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 1rem;
       text-align: center;
       background: var(--bonvoyo-dark);
       color: white;
@@ -34,14 +34,14 @@
 
     header h1 {
       margin: 0.5rem 0;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     .slogan {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       font-size: 1rem;
-      font-weight: 400;
-      color: #bbb;
+      font-weight: 300;
+      color: #ccc;
     }
 
     .container {
@@ -50,12 +50,13 @@
       padding: 2rem;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .container h2 {
       text-align: center;
       margin-bottom: 1.5rem;
+      font-size: 1.4rem;
     }
 
     input, button {
@@ -92,6 +93,14 @@
       color: #333;
     }
 
+    .info-section ul {
+      padding-left: 1.2rem;
+    }
+
+    .info-section li {
+      margin-bottom: 0.5rem;
+    }
+
     .info-section strong {
       color: var(--bonvoyo-red);
     }
@@ -102,6 +111,15 @@
       color: #999;
       margin-top: 3rem;
       padding-bottom: 2rem;
+    }
+
+    footer a {
+      color: #999;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: var(--bonvoyo-dark);
     }
   </style>
 </head>
@@ -141,14 +159,14 @@
 
       const userEmail = document.getElementById('user_email').value;
 
-      // Mail to yourself (company side)
+      // Mail to company
       emailjs.send("service_aeekxis", "template_jv6b797", {
         email: userEmail,
         name: "Bonvoyo Bot",
         message: "A new person is interested in Bonvoyo. Send a marketing mail to: " + userEmail
       });
 
-      // Mail to user (confirmation)
+      // Confirmation mail to user
       emailjs.send("service_aeekxis", "template_pdspmsw", {
         email: userEmail,
         name: "Bonvoyo Team",
