@@ -1,92 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Bonvoyo - Get Your Ticket</title>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonvoyo Landing Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
     (function () {
-      emailjs.init("GrK3PNM3XwVuGy6Zw"); // Your EmailJS public key
+      emailjs.init("GrK3PNM3XwVuGy6Zw");
     })();
   </script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #e2001a; /* Bonvoyo red */
+      color: white;
+      padding: 40px 20px;
       text-align: center;
-      padding: 50px;
     }
 
-    .container {
-      background: white;
-      padding: 30px;
-      max-width: 400px;
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 800px;
       margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      margin-bottom: 20px;
+    section {
+      margin-bottom: 30px;
     }
 
-    input, button {
-      width: 100%;
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta input {
       padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      border-radius: 6px;
+      font-size: 1em;
+      width: 80%;
+      max-width: 400px;
+      margin-bottom: 10px;
+      border-radius: 5px;
       border: 1px solid #ccc;
     }
 
-    button {
-      background-color: black;
+    .cta button {
+      background-color: #e2001a;
       color: white;
+      padding: 12px 24px;
+      font-size: 1em;
       border: none;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
 
-    button:hover {
-      background-color: #333;
+    .cta button:hover {
+      background-color: #c10015;
     }
 
-    #status {
-      margin-top: 15px;
-      font-weight: bold;
+    footer {
+      font-size: 0.8em;
+      color: #666;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      header p, main {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Dein Ticket per E-Mail</h2>
-    <form id="emailForm">
-      <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
-      <button type="submit">Ticket senden</button>
-    </form>
-    <p id="status"></p>
-  </div>
+  <header>
+    <h1>Dieses Ticket könnte kostenlos sein!</h1>
+    <p>Wenn dein Arbeitgeber Bonvoyo nutzen würde.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Was ist Bonvoyo?</h2>
+      <p>Bonvoyo ist ein innovativer Mobilitätsbenefit für Unternehmen. Mitarbeitende erhalten ein flexibles, steuerfreies Mobilitätsbudget – nutzbar für Bahn, Bus, Sharing & Co. Das spart Kosten und steigert die Zufriedenheit.</p>
+    </section>
+
+    <section>
+      <h2>Warum profitieren alle?</h2>
+      <ul>
+        <li><strong>Für Mitarbeitende:</strong> Flexible Mobilität, echte Ersparnisse, einfache Nutzung per App.</li>
+        <li><strong>Für Unternehmen:</strong> Stärkung der Arbeitgebermarke, attraktive Benefits, nachhaltige Mobilität.</li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <h2>Mach den ersten Schritt!</h2>
+      <p>Trag hier deine E-Mail-Adresse ein. Du bekommst eine Nachricht, die du direkt an deinen Chef oder HR weiterleiten kannst.</p>
+      <form id="emailForm">
+        <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
+        <br>
+        <button type="submit">E-Mail anfordern</button>
+        <p id="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bonvoyo GmbH | Musterstraße 1, 80331 München | info@bonvoyo.de</p>
+  </footer>
 
   <script>
-    document.getElementById('emailForm').addEventListener('submit', function (event) {
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
       event.preventDefault();
-
       const userEmail = document.getElementById('user_email').value;
 
-      // 1. Send to YOU (Bonvoyo Team)
-      emailjs.send("service_aeekxis", "template_jv6b797", {
-        email: userEmail
-      }).then(function () {
-        document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
-        document.getElementById('emailForm').reset();
-      }, function (error) {
-        document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
-      });
+      // Send to Bonvoyo Team
+      emailjs.send("service_aeekxis", "template_jv6b797", { email: userEmail });
 
-      // 2. Send auto-reply to the USER
-      emailjs.send("service_aeekxis", "template_pdspmsw", {
-        email: userEmail
-      });
+      // Send to User
+      emailjs.send("service_aeekxis", "template_pdspmsw", { email: userEmail })
+        .then(function () {
+          document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
+          document.getElementById('emailForm').reset();
+        }, function (error) {
+          document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
+        });
     });
   </script>
 </body>
