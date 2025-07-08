@@ -5,8 +5,8 @@
   <title>Bonvoyo - Get Your Ticket</title>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
-    (function() {
-      emailjs.init("GrK3PNM3XwVuGy6Zw");
+    (function () {
+      emailjs.init("GrK3PNM3XwVuGy6Zw"); // Your EmailJS public key
     })();
   </script>
   <style>
@@ -68,20 +68,24 @@
   </div>
 
   <script>
-    document.getElementById('emailForm').addEventListener('submit', function(event) {
+    document.getElementById('emailForm').addEventListener('submit', function (event) {
       event.preventDefault();
 
       const userEmail = document.getElementById('user_email').value;
 
+      // 1. Send to YOU (Bonvoyo Team)
       emailjs.send("service_aeekxis", "template_jv6b797", {
-        email: userEmail, // Must match {{email}} in your EmailJS template
-        name: "Bonvoyo Bot", // Optional, matches {{name}} if used
-        message: "Danke für dein Interesse an Bonvoyo!" // Optional, matches {{message}} if used
-      })
-      .then(function(response) {
+        email: userEmail
+      }).then(function () {
         document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
-      }, function(error) {
+        document.getElementById('emailForm').reset();
+      }, function (error) {
         document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
+      });
+
+      // 2. Send auto-reply to the USER
+      emailjs.send("service_aeekxis", "template_pdspmsw", {
+        email: userEmail
       });
     });
   </script>
