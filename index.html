@@ -1,182 +1,159 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bonvoyo – Dein Ticket</title>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonvoyo Landing Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
     (function () {
       emailjs.init("GrK3PNM3XwVuGy6Zw");
     })();
   </script>
   <style>
-    :root {
-      --bonvoyo-red: #d0021b;
-      --bonvoyo-dark: #20202b;
-      --bonvoyo-light: #f9f9f9;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: var(--bonvoyo-light);
-      color: var(--bonvoyo-dark);
-    }
-
-    header {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      background: var(--bonvoyo-dark);
-      color: white;
-    }
-
-    header h1 {
-      margin: 0.5rem 0;
-      font-size: 1.6rem;
-    }
-
-    .slogan {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      font-weight: 300;
-      color: #ccc;
-    }
-
-    .container {
-      max-width: 500px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .container h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 1.4rem;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: var(--bonvoyo-dark);
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: var(--bonvoyo-red);
-    }
-
-    #status {
-      margin-top: 15px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .info-section {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
       color: #333;
     }
 
-    .info-section ul {
-      padding-left: 1.2rem;
+    .corner-logo {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: auto;
+      z-index: 999;
     }
 
-    .info-section li {
-      margin-bottom: 0.5rem;
+    header {
+      background-color: #e2001a; /* Bonvoyo red */
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    .info-section strong {
-      color: var(--bonvoyo-red);
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta input {
+      padding: 12px;
+      font-size: 1em;
+      width: 80%;
+      max-width: 400px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .cta button {
+      background-color: #e2001a;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cta button:hover {
+      background-color: #c10015;
     }
 
     footer {
+      font-size: 0.8em;
+      color: #666;
       text-align: center;
-      font-size: 0.8rem;
-      color: #999;
-      margin-top: 3rem;
-      padding-bottom: 2rem;
+      padding: 20px;
+      background-color: #f5f5f5;
     }
 
-    footer a {
-      color: #999;
-      text-decoration: underline;
-    }
-
-    footer a:hover {
-      color: var(--bonvoyo-dark);
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+      header p, main {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
+  <img src="1D30EE90-673D-4793-BDCC-940EE762F1ED.png" alt="Bonvoyo Slogan Icon" class="corner-logo">
+
   <header>
-    <h1>Wenn deine Firma Bonvoyo anbieten würde</h1>
-    <p class="slogan">Dein Mobilitätsbudget. Flexibel. Steuerfrei. Für alle.</p>
+    <h1>Dieses Ticket könnte kostenlos sein!</h1>
+    <p>Wenn deine Firma Bonvoyo anbieten würde.</p>
   </header>
 
-  <div class="container">
-    <h2>Dein Ticket per E-Mail</h2>
-    <form id="emailForm">
-      <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
-      <button type="submit">Ticket senden</button>
-    </form>
-    <p id="status"></p>
+  <main>
+    <section>
+      <h2>Was ist Bonvoyo?</h2>
+      <p>Bonvoyo ist ein innovativer Mobilitätsbenefit für Unternehmen. Mitarbeitende erhalten ein flexibles, steuerfreies Mobilitätsbudget – nutzbar für Bahn, Bus, Sharing & Co. Das spart Kosten und steigert die Zufriedenheit.</p>
+    </section>
 
-    <div class="info-section">
-      <p>Mit Bonvoyo profitieren <strong>Arbeitnehmer und Arbeitgeber</strong>:</p>
+    <section>
+      <h2>Warum profitieren alle?</h2>
       <ul>
-        <li>💼 Steuerfreie Vorteile – bis zu 600€ pro Jahr</li>
-        <li>🚌 ÖPNV, Sharing, Bahn & mehr – alles in einem Budget</li>
-        <li>📱 Digitale Abwicklung – keine Papierbelege nötig</li>
-        <li>🌍 Nachhaltige Mobilität wird gefördert</li>
+        <li><strong>Für Mitarbeitende:</strong> Flexible Mobilität, echte Ersparnisse, einfache Nutzung per App.</li>
+        <li><strong>Für Unternehmen:</strong> Stärkung der Arbeitgebermarke, attraktive Benefits, nachhaltige Mobilität.</li>
       </ul>
-      <p><strong>Jetzt handeln:</strong> Sende dir selbst das Ticket und leite es an deine HR oder Führungskraft weiter.</p>
-    </div>
-  </div>
+    </section>
+
+    <section class="cta">
+      <h2>Jetzt E-Mail erhalten und weiterleiten</h2>
+      <p>Trag hier deine E-Mail-Adresse ein. Du bekommst eine Nachricht, die du direkt an deinen Chef oder HR weiterleiten kannst.</p>
+      <form id="emailForm">
+        <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
+        <br>
+        <button type="submit">E-Mail anfordern</button>
+        <p id="status"></p>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    © 2025 Bonvoyo | <a href="https://www.bonvoyo.de/impressum" target="_blank">Impressum</a>
+    <p>&copy; 2025 Bonvoyo GmbH | Musterstraße 1, 80331 München | info@bonvoyo.de</p>
   </footer>
 
   <script>
     document.getElementById('emailForm').addEventListener('submit', function(event) {
       event.preventDefault();
-
       const userEmail = document.getElementById('user_email').value;
 
-      // Mail to company
-      emailjs.send("service_aeekxis", "template_jv6b797", {
-        email: userEmail,
-        name: "Bonvoyo Bot",
-        message: "A new person is interested in Bonvoyo. Send a marketing mail to: " + userEmail
-      });
+      // Send to Bonvoyo Team
+      emailjs.send("service_aeekxis", "template_jv6b797", { email: userEmail });
 
-      // Confirmation mail to user
-      emailjs.send("service_aeekxis", "template_pdspmsw", {
-        email: userEmail,
-        name: "Bonvoyo Team",
-        message: "Vielen Dank für dein Interesse! Teile Bonvoyo mit deinem Unternehmen."
-      })
-      .then(function(response) {
-        document.getElementById('status').textContent = "Ticket erfolgreich versendet!";
-      }, function(error) {
-        document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
-      });
+      // Send to User
+      emailjs.send("service_aeekxis", "template_pdspmsw", { email: userEmail })
+        .then(function () {
+          document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
+          document.getElementById('emailForm').reset();
+        }, function (error) {
+          document.getElementById('status').textContent = "Fehler beim Senden: " + error.text;
+        });
     });
   </script>
 </body>
