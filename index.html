@@ -95,6 +95,17 @@
       border-radius: 5px;
     }
 
+    .challenge h2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .challenge p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
     footer {
       font-size: 0.8em;
       color: #666;
@@ -115,7 +126,7 @@
 </head>
 <body>
 
-  <!-- Top-right corner image -->
+  <!-- Bild oben rechts -->
   <img class="top-right-image" src="https://private-user-images.githubusercontent.com/189599580/466180979-c8081f58-f05a-412a-8d84-c4548b92acfd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1MjQyMTgsIm5iZiI6MTc1MjUyMzkxOCwicGF0aCI6Ii8xODk1OTk1ODAvNDY2MTgwOTc5LWM4MDgxZjU4LWYwNWEtNDEyYS04ZDg0LWM0NTQ4YjkyYWNmZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNFQyMDExNThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNWFkMjA3YWEwNWVlZjg4MzYwZDEyMGM0NWUyNjk5ZTNjZGMyNDdmMDI3ZWRlMDIzMDE5Mzk1NDFkZjI4YmU4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Btl9Ym5xr5zFH6ABolPKiyaFHmmyaQTV5fnxSFZRJfk" alt="Bonvoyo Logo oben rechts">
 
   <header>
@@ -140,9 +151,22 @@
     <section class="cta">
       <h2>Jetzt E-Mail erhalten und weiterleiten</h2>
       <p>Trag hier deine E-Mail-Adresse ein. Du bekommst eine Nachricht, die du direkt an deinen Chef oder HR weiterleiten kannst.</p>
-      
+
+      <!-- Challenge-Text -->
+      <div class="challenge">
+        <h2>Du willst ein Deutschlandticket gewinnen?</h2>
+        <p>
+          Nimm an unserer Social-Media Challenge teil!<br><br>
+          <strong>Schritt 1)</strong> Fotografiere 5 der 6 Sticker, die sich auf immer mehr Verkehrsmitteln der Deutschen Bahn befinden<br>
+          <strong>Schritt 2)</strong> Mache eine Story auf Instagram mit allen 5 Bildern in einer Collage und tagge <strong>@deutschebahn</strong><br>
+          <strong>Fertig!</strong>
+        </p>
+      </div>
+
+      <!-- Sticker-Bild -->
       <img src="https://private-user-images.githubusercontent.com/189599580/466179653-06ad09fd-5433-4598-9dc6-6b6821a1fd7d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI1MjQwMTgsIm5iZiI6MTc1MjUyMzcxOCwicGF0aCI6Ii8xODk1OTk1ODAvNDY2MTc5NjUzLTA2YWQwOWZkLTU0MzMtNDU5OC05ZGM2LTZiNjgyMWExZmQ3ZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE0JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNFQyMDA4MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MTNmY2E2NmNjZWIwNDAxOTkzMzYxMTVhMTA0MzlkMWNlZWEyYjAyYzcyODliYjM3YzU5YjJiMGRmZDgyNGVkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.o4v27s0sXcXwpvL4Coa8C3nJZGBSbdD-gJe07acevNg" alt="Beispielbild mit Bonvoyo-Stickern auf Verkehrsmitteln">
 
+      <!-- Formular -->
       <form id="emailForm">
         <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
         <button type="submit">E-Mail anfordern</button>
