@@ -18,17 +18,8 @@
       color: #333;
     }
 
-    .corner-logo {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: auto;
-      z-index: 999;
-    }
-
     header {
-      background-color: #e2001a; /* Bonvoyo red */
+      background-color: #e2001a;
       color: white;
       padding: 40px 20px;
       text-align: center;
@@ -88,6 +79,13 @@
       background-color: #c10015;
     }
 
+    .cta img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
     footer {
       font-size: 0.8em;
       color: #666;
@@ -130,6 +128,9 @@
     <section class="cta">
       <h2>Jetzt E-Mail erhalten und weiterleiten</h2>
       <p>Trag hier deine E-Mail-Adresse ein. Du bekommst eine Nachricht, die du direkt an deinen Chef oder HR weiterleiten kannst.</p>
+      
+      <img src="img/verkehrsmittel.png" alt="Beispielbild mit Bonvoyo-Stickern auf Verkehrsmitteln">
+
       <form id="emailForm">
         <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
         <button type="submit">E-Mail anfordern</button>
@@ -147,10 +148,7 @@
       event.preventDefault();
       const userEmail = document.getElementById('user_email').value;
 
-      // Send to Bonvoyo Team
       emailjs.send("service_aeekxis", "template_jv6b797", { email: userEmail });
-
-      // Send to User
       emailjs.send("service_aeekxis", "template_pdspmsw", { email: userEmail })
         .then(function () {
           document.getElementById('status').textContent = "E-Mail erfolgreich gesendet!";
