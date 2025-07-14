@@ -54,16 +54,21 @@
     }
 
     .cta {
-      text-align: center;
+      text-align: left;
       margin-top: 40px;
+    }
+
+    .cta input,
+    .cta button {
+      display: block;
+      margin-bottom: 10px;
     }
 
     .cta input {
       padding: 12px;
       font-size: 1em;
-      width: 80%;
+      width: 100%;
       max-width: 400px;
-      margin-bottom: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
@@ -76,6 +81,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      width: fit-content;
     }
 
     .cta button:hover {
@@ -126,7 +132,6 @@
       <p>Trag hier deine E-Mail-Adresse ein. Du bekommst eine Nachricht, die du direkt an deinen Chef oder HR weiterleiten kannst.</p>
       <form id="emailForm">
         <input type="email" id="user_email" placeholder="Deine E-Mail-Adresse" required>
-        <br>
         <button type="submit">E-Mail anfordern</button>
         <p id="status"></p>
       </form>
