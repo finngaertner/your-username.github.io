@@ -123,47 +123,66 @@
       background-color: #f5f5f5;
     }
     .hero-header {
-  background: linear-gradient(90deg, #e2001a 0%, #f4363f 100%);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: auto;
-}
-
-.hero-header h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.hero-header p {
-  font-size: 1.2em;
-  margin: 0;
-  opacity: 0.9;
-}
-
-.hero-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 15px;
-}
-
-.hero-badge {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: white;
-  color: #e2001a;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-}
+      background: linear-gradient(90deg, #e2001a 0%, #f4363f 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      }
+    
+      .hero-header::before {
+        content: "";
+        background-image: url('https://private-user-images.githubusercontent.com/189599580/466187612-aac130da-6c20-4932-9bcf-42765ba8059a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTI2MDQzODksIm5iZiI6MTc1MjYwNDA4OSwicGF0aCI6Ii8xODk1OTk1ODAvNDY2MTg3NjEyLWFhYzEzMGRhLTZjMjAtNDkzMi05YmNmLTQyNzY1YmE4MDU5YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcxNVQxODI4MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lYmRkZTk4NzkzYWQzMTYwNjRmNDc4ZTE2MjE0OTI1NzMxZmMxZjQ2YTJmMDYxYmZmMzIzZWQxNTdiNDhjZDc3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Tq4XPH74pdfO6ZBOh5UxvrrfXpPseeyRSTO4FON5-eE');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center right;
+        opacity: 0.07;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: auto;
+      }
+      
+      .hero-header h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      
+      .hero-header p {
+        font-size: 1.2em;
+        margin: 0;
+        opacity: 0.95;
+      }
+      
+      .hero-icon {
+        width: 60px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+      
+      .hero-badge {
+        display: inline-block;
+        margin-top: 25px;
+        background-color: white;
+        color: #e2001a;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1em;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
   </style>
 </head>
 <body>
